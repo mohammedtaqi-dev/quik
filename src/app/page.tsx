@@ -693,7 +693,7 @@ export default function Quik() {
         <div className="floating-hex" style={{top:"70%",right:"8%",width:40,height:40,color:"var(--accent-2)",animationDuration:"20s"} as React.CSSProperties}>
           <svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 2L35 11L35 29L20 38L5 29L5 11Z"/></svg>
         </div>
-        <div className="floating-hex" style={{top:"40%",left:"50%",width:32,height:32,color:"var(--accent-1)",opacity:0.08,animationDuration:"30s"} as React.CSSProperties}>
+        <div className="floating-hex" style={{top:"40%",left:"50%",width:32,height:32,color:"var(--accent-1)",animationDuration:"30s"} as React.CSSProperties}>
           <svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 2L35 11L35 29L20 38L5 29L5 11Z"/></svg>
         </div>
         <div className="flex flex-col items-center gap-8 w-full max-w-sm">

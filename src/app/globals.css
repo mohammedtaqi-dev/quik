@@ -365,7 +365,7 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .floating-hex {
   position: absolute;
   pointer-events: none;
-  opacity: 0.12;
+  opacity: 0.04;
   animation: float-hex 20s ease-in-out infinite alternate;
 }
 .floating-hex:nth-child(odd) { animation-delay: -10s; }
