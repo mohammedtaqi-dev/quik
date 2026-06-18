@@ -45,7 +45,7 @@ function LayoutInner({ children }: { children: React.ReactNode }) {
           )}
         </div>
       </header>
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto scroll-container">
         {children}
       </div>
     </>
@@ -61,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="h-screen flex flex-col overflow-hidden">
+      <body className="h-dvh flex flex-col overflow-hidden">
         <ThemeProvider>
           <LayoutInner>{children}</LayoutInner>
         </ThemeProvider>
