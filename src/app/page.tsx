@@ -989,43 +989,53 @@ export default function Quik() {
           <Link href="/guide" className="px-3 py-1.5 rounded-xl btn-outline text-[10px] font-medium shrink-0">❓ Guide</Link>
         </div>
 
-          <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-0 items-stretch">
-            {(() => {
-              const selected = MODE_CONFIG.find((m) => m.id === selectedMode)!;
-              const others = MODE_CONFIG.filter((m) => m.id !== selectedMode);
-              return (
-                <>
-                  <div key={selected.id} onClick={() => {/* no-op */}}
-                    className={`glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-3 mode-card mode-card-accent mode-card-selected`}
-                    style={{ borderColor: "transparent" }}>
-                    <span className="text-4xl">{selected.icon}</span>
-                    <span className="text-lg font-bold" style={{ color: "var(--fg)" }}>{selected.label}</span>
-                    <span className="text-xs text-center" style={{ color: "var(--fg)", opacity: 0.5 }}>{selected.desc}</span>
-                    <div className="w-full mt-2 space-y-2" onClick={(e) => e.stopPropagation()}>
-                      {configRow}
-                      {extraOptions}
-                      {hotSeatSection}
-                      {startBtn}
+        <div className="flex gap-1.5 mb-3 overflow-x-auto shrink-0 pb-1 lg:hidden -mx-3 px-3">
+          {MODE_CONFIG.map((m) => (
+            <button key={m.id} onClick={() => setSelectedMode(m.id)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium shrink-0 transition-all whitespace-nowrap ${
+                m.id === selectedMode ? "btn-accent" : "btn-outline opacity-70"
+              }`}>
+              <span style={{fontSize:14}}>{m.icon}</span> {m.label}
+            </button>
+          ))}
+        </div>
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-0 items-stretch">
+          {(() => {
+            const selected = MODE_CONFIG.find((m) => m.id === selectedMode)!;
+            const others = MODE_CONFIG.filter((m) => m.id !== selectedMode);
+            return (
+              <>
+                <div key={selected.id} onClick={() => {/* no-op */}}
+                  className={`glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-3 mode-card mode-card-accent mode-card-selected`}
+                  style={{ borderColor: "transparent" }}>
+                  <span className="text-4xl">{selected.icon}</span>
+                  <span className="text-lg font-bold" style={{ color: "var(--fg)" }}>{selected.label}</span>
+                  <span className="text-xs text-center" style={{ color: "var(--fg)", opacity: 0.5 }}>{selected.desc}</span>
+                  <div className="w-full mt-2 space-y-2" onClick={(e) => e.stopPropagation()}>
+                    {configRow}
+                    {extraOptions}
+                    {hotSeatSection}
+                    {startBtn}
+                  </div>
+                </div>
+                <div className="flex-col gap-4 hidden lg:flex">
+                  {others.map((m) => (
+                    <div key={m.id} onClick={() => { setSelectedMode(m.id); }}
+                      role="button" tabIndex={0}
+                      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedMode(m.id); } }}
+                      aria-label={`Mode: ${m.label} — ${m.desc}`}
+                      className={`glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-3 mode-card mode-card-accent flex-1`}
+                      style={{ borderColor: "var(--card-border)", background: "var(--card-bg)" }}>
+                      <span className="text-4xl">{m.icon}</span>
+                      <span className="text-lg font-bold" style={{ color: "var(--fg)" }}>{m.label}</span>
+                      <span className="text-xs text-center" style={{ color: "var(--fg)", opacity: 0.5 }}>{m.desc}</span>
                     </div>
-                  </div>
-                  <div className="flex flex-col gap-4">
-                    {others.map((m) => (
-                      <div key={m.id} onClick={() => { setSelectedMode(m.id); }}
-                        role="button" tabIndex={0}
-                        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedMode(m.id); } }}
-                        aria-label={`Mode: ${m.label} — ${m.desc}`}
-                        className={`glass-card rounded-2xl p-6 flex flex-col items-center justify-center gap-3 mode-card mode-card-accent flex-1`}
-                        style={{ borderColor: "var(--card-border)", background: "var(--card-bg)" }}>
-                        <span className="text-4xl">{m.icon}</span>
-                        <span className="text-lg font-bold" style={{ color: "var(--fg)" }}>{m.label}</span>
-                        <span className="text-xs text-center" style={{ color: "var(--fg)", opacity: 0.5 }}>{m.desc}</span>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              );
-            })()}
-          </div>
+                  ))}
+                </div>
+              </>
+            );
+          })()}
+        </div>
       </main>
     );
   }
