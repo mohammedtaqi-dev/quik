@@ -680,7 +680,22 @@ export default function Quik() {
 
   if (screen === "register") {
     return (
-      <main className="h-full p-4 flex items-center justify-center animate-screen-in">
+      <main className="h-full p-4 flex items-center justify-center animate-screen-in relative overflow-hidden">
+        <div className="floating-hex" style={{top:"15%",left:"5%",width:48,height:48,color:"var(--accent-1)",animationDuration:"25s"} as React.CSSProperties}>
+          <svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 2L35 11L35 29L20 38L5 29L5 11Z"/></svg>
+        </div>
+        <div className="floating-hex" style={{top:"65%",left:"8%",width:36,height:36,color:"var(--accent-2)",animationDuration:"22s"} as React.CSSProperties}>
+          <svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 2L35 11L35 29L20 38L5 29L5 11Z"/></svg>
+        </div>
+        <div className="floating-hex" style={{top:"10%",right:"5%",width:56,height:56,color:"var(--accent-1)",animationDuration:"28s"} as React.CSSProperties}>
+          <svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 2L35 11L35 29L20 38L5 29L5 11Z"/></svg>
+        </div>
+        <div className="floating-hex" style={{top:"70%",right:"8%",width:40,height:40,color:"var(--accent-2)",animationDuration:"20s"} as React.CSSProperties}>
+          <svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 2L35 11L35 29L20 38L5 29L5 11Z"/></svg>
+        </div>
+        <div className="floating-hex" style={{top:"40%",left:"50%",width:32,height:32,color:"var(--accent-1)",opacity:0.08,animationDuration:"30s"} as React.CSSProperties}>
+          <svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 2L35 11L35 29L20 38L5 29L5 11Z"/></svg>
+        </div>
         <div className="flex flex-col items-center gap-8 w-full max-w-sm">
           <div className="flex flex-col items-center gap-4">
             <div className="w-20 h-20 rounded-2xl bg-white dark:bg-slate-800/50 flex items-center justify-center shadow-xl border border-gray-200 dark:border-slate-700 animate-scale-in">

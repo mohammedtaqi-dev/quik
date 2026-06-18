@@ -362,6 +362,18 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
   animation: screen-in 0.35s ease-out;
 }
 
+.floating-hex {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.12;
+  animation: float-hex 20s ease-in-out infinite alternate;
+}
+.floating-hex:nth-child(odd) { animation-delay: -10s; }
+@keyframes float-hex {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  100% { transform: translate(40px, -30px) rotate(30deg) scale(1.1); }
+}
+
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
