@@ -680,7 +680,7 @@ export default function Quik() {
 
   if (screen === "register") {
     return (
-      <main className="h-full p-4 flex items-center justify-center animate-screen-in relative overflow-hidden">
+      <main className="min-h-full p-4 flex items-center justify-center animate-screen-in relative">
         <div className="floating-hex" style={{top:"15%",left:"5%",width:48,height:48,color:"var(--accent-1)",animationDuration:"25s"} as React.CSSProperties}>
           <svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 2L35 11L35 29L20 38L5 29L5 11Z"/></svg>
         </div>
@@ -946,7 +946,7 @@ export default function Quik() {
     }
 
     return (
-      <main className="h-full p-3 sm:p-5 flex flex-col overflow-hidden animate-screen-in">
+      <main className="min-h-full p-3 sm:p-5 flex flex-col animate-screen-in">
         {showApiToast && (
           <div className="mb-2 px-3 py-2 rounded-xl text-[10px] font-medium animate-slide-up flex items-center gap-2 shrink-0"
             style={{ background: "color-mix(in srgb, #f59e0b 15%, transparent)", color: "#d97706", border: "1px solid color-mix(in srgb, #f59e0b 25%, transparent)" }}
@@ -1065,7 +1065,7 @@ export default function Quik() {
     const userRank = userEntry ? leaderboard.indexOf(userEntry) + 1 : -1;
 
     return (
-      <main className="h-full p-3 sm:p-5 flex flex-col overflow-hidden animate-screen-in">
+      <main className="min-h-full p-3 sm:p-5 flex flex-col animate-screen-in">
         <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full overflow-y-auto">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 mb-4">
             <div className="lg:col-span-3 space-y-4">
@@ -1230,7 +1230,7 @@ export default function Quik() {
 
   if (screen === "review") {
     return (
-      <main className="h-full p-3 sm:p-5 flex flex-col overflow-hidden animate-screen-in">
+      <main className="min-h-full p-3 sm:p-5 flex flex-col animate-screen-in">
         <div className="flex-1 flex flex-col max-w-2xl mx-auto w-full space-y-4 overflow-y-auto">
           <div className="flex items-center justify-between">
             <h2 className="text-xl font-bold text-gradient">Review</h2>
@@ -1290,7 +1290,7 @@ export default function Quik() {
   if (screen === "flashcards") {
     const fc = wrongQuestions[flashcardIdx];
     return (
-      <main className="h-full p-3 sm:p-5 flex flex-col overflow-hidden animate-screen-in">
+      <main className="min-h-full p-3 sm:p-5 flex flex-col animate-screen-in">
         <div className="flex-1 flex flex-col max-w-lg mx-auto w-full">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-bold text-gradient">Flashcard Study</h2>
@@ -1384,7 +1384,7 @@ export default function Quik() {
     const winner = sorted[0];
     const hasPerfect = playerResults.some((p) => p.percentage === 100);
     return (
-      <main className="h-full p-3 sm:p-5 flex flex-col overflow-hidden animate-screen-in">
+      <main className="min-h-full p-3 sm:p-5 flex flex-col animate-screen-in">
         <div className="flex-1 flex flex-col max-w-lg mx-auto w-full space-y-4 overflow-y-auto">
           <div className="text-center">
             {hasPerfect && (
@@ -1435,7 +1435,7 @@ export default function Quik() {
   const isConfidence = selectedMode === "confidence";
 
   return (
-    <main className="h-full p-3 sm:p-5 flex flex-col overflow-hidden animate-screen-in">
+    <main className="min-h-full p-3 sm:p-5 flex flex-col animate-screen-in">
       <div className="flex items-center justify-between text-xs shrink-0" style={{ color: "var(--fg)", opacity: 0.6 }}>
         <div className="flex items-center gap-2">
           <span className="font-medium">{currentIndex + 1}/{quizQuestions.length}</span>

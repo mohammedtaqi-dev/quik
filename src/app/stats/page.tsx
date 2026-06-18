@@ -14,7 +14,7 @@ export default function StatsPage() {
 
   if (!stats || stats.totalGames === 0) {
     return (
-      <main className="h-full p-3 sm:p-5 flex flex-col overflow-hidden">
+      <main className="min-h-full p-3 sm:p-5 flex flex-col">
         <div className="flex-1 flex flex-col max-w-2xl mx-auto w-full space-y-4 overflow-y-auto">
           <div className="flex items-center gap-3">
             <Link href="/" className="p-2 rounded-lg btn-outline hover:scale-105 transition-all">

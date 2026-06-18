@@ -21,7 +21,7 @@ export default function LeaderboardPage() {
     .sort((a, b) => b.percentage - a.percentage);
 
   return (
-      <main className="h-full p-3 sm:p-5 flex flex-col overflow-hidden">
+      <main className="min-h-full p-3 sm:p-5 flex flex-col">
       <div className="flex-1 flex flex-col max-w-2xl mx-auto w-full space-y-4 overflow-y-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
