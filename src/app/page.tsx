@@ -1042,7 +1042,7 @@ export default function Quik() {
 
   if (screen === "loading") {
     return (
-      <main className="h-full p-4 flex items-center justify-center animate-screen-in">
+      <main className="min-h-full p-4 flex items-center justify-center animate-screen-in">
         <div className="text-center animate-fade-in max-w-xs">
           <div className="w-16 h-16 mx-auto mb-4 relative">
             <div className="absolute inset-0 rounded-full border-4" style={{ borderColor: "color-mix(in srgb, var(--accent-1) 20%, transparent)" }} />
@@ -1341,7 +1341,7 @@ export default function Quik() {
   if (screen === "hotseat-interstitial") {
     const nextPlayer = players[currentPlayerIdx];
     return (
-      <main className="h-full p-4 flex items-center justify-center animate-screen-in">
+      <main className="min-h-full p-4 flex items-center justify-center animate-screen-in">
         <div className="flex flex-col items-center gap-6 text-center max-w-sm animate-fade-in">
           <div className="w-16 h-16 rounded-2xl flex items-center justify-center btn-accent">
             <User size={28} className="text-white" />

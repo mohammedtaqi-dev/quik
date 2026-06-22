@@ -34,7 +34,7 @@ export default function StatsPage() {
   const accuracy = stats.totalQuestions > 0 ? Math.round((stats.totalCorrect / stats.totalQuestions) * 100) : 0;
 
   return (
-    <main className="flex-1 p-4 sm:p-8 flex items-start justify-center pt-16 sm:pt-24">
+    <main className="min-h-full p-4 sm:p-8 flex items-start justify-center pt-16 sm:pt-24">
       <div className="w-full max-w-2xl animate-fade-in space-y-6">
         <div className="flex items-center gap-3">
           <Link href="/" className="p-2 rounded-lg btn-outline hover:scale-105 transition-all">
